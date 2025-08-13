@@ -4,11 +4,7 @@
 #include <set>
 
 #include "UI.h"
-#include "Platform.h"
-#include "Ball.h"
-#include "Bricks/BrickManager.h"
 #include "GameMemento.h"
-#include "Bonuses/BonusManager.h"
 
 namespace RogaliqueGame
 {
@@ -41,12 +37,7 @@ namespace RogaliqueGame
 
 		// Game objects
 		UI ui;
-		Platform platform;
-		Ball ball;
-		BrickManager brickManager;
-		BonusManager bonusManager;
 		GameMemento savedState;
-		std::set<const Brick*> destroyedBricks;
 		int lives = SETTINGS.INITIAL_LIVES;
 	};
 }

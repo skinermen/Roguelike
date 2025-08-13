@@ -2,13 +2,11 @@
 #include <SFML/System/Vector2.hpp>
 #include <memory>
 #include <vector>
-#include "Bricks/Brick.h"
 
 namespace RogaliqueGame
 {
     struct GameMemento
     {
-        std::vector<std::shared_ptr<Brick>> bricks;
         sf::Vector2f ballPosition;
         sf::Vector2f ballVelocity;
         sf::Vector2f platformPosition;

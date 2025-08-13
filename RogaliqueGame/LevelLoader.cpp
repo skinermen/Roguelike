@@ -1,5 +1,5 @@
 ﻿#include "LevelLoader.h"
-#include "../Settings.h"
+#include "Settings.h"
 
 #include <fstream>
 #include <cassert>

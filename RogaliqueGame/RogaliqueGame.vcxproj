@@ -162,24 +162,84 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="BallStrategies.cpp" />
-    <ClCompile Include="Bonuses\Bonus.cpp" />
-    <ClCompile Include="Bonuses\BonusManager.cpp" />
-    <ClCompile Include="Bonuses\FireBallBonus.cpp" />
-    <ClCompile Include="Bonuses\FragileBlocksBonus.cpp" />
-    <ClCompile Include="Bonuses\PlatformSizeBonus.cpp" />
-    <ClCompile Include="Bricks\BrickFactory.cpp" />
-    <ClCompile Include="Bricks\Brick.cpp" />
-    <ClCompile Include="Bricks\BrickManager.cpp" />
-    <ClCompile Include="Bricks\GlassBrick.cpp" />
-    <ClCompile Include="Bricks\LevelLoader.cpp" />
-    <ClCompile Include="Bricks\UnbreackableBrick.cpp" />
-    <ClCompile Include="Bricks\SimpleBrick.cpp" />
-    <ClCompile Include="Bricks\StrongBrick.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="LevelLoader.cpp">
+      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</BrowseInformationFile>
+      <CompileAs>Default</CompileAs>
+      <ConformanceMode>true</ConformanceMode>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableASAN>false</EnableASAN>
+      <EnableFuzzer>false</EnableFuzzer>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateModuleDependencies>false</GenerateModuleDependencies>
+      <GenerateSourceDependencies>false</GenerateSourceDependencies>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ModuleDependenciesFile>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</ModuleDependenciesFile>
+      <ModuleOutputFile>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</ModuleOutputFile>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ObjectFileName>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\vc143.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\ApplesGame.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <ShowIncludes>false</ShowIncludes>
+      <SourceDependenciesFile>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</SourceDependenciesFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TrackerLogDirectory>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\ApplesGame.tlog\</TrackerLogDirectory>
+      <TranslateIncludes>false</TranslateIncludes>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>D:\XYZ\Source\Rogalique\RogaliqueGame\\x64\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntelJCCErratum>false</IntelJCCErratum>
+      <BuildStlModules>false</BuildStlModules>
+      <TreatAngleIncludeAsExternal>false</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
+      <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
+      <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;_UNICODE;UNICODE;</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\XYZ\Source\Rogalique\\SFML\SFML-2.5.1\include;</AdditionalIncludeDirectories>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Menu\ConfirmationMenu.cpp" />
     <ClCompile Include="Menu\GameOverMenu.cpp" />
@@ -189,30 +249,13 @@
     <ClCompile Include="Menu\NameInputMenu.cpp" />
     <ClCompile Include="Menu\PauseMenu.cpp" />
     <ClCompile Include="Menu\WinnerMenu.cpp" />
-    <ClCompile Include="Platform.cpp" />
-    <ClCompile Include="PlatformCommand.cpp" />
     <ClCompile Include="Scores\RecordManager.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="BallStrategies.h" />
-    <ClInclude Include="BallStrategy.h" />
-    <ClInclude Include="Bonuses\Bonus.h" />
-    <ClInclude Include="Bonuses\BonusManager.h" />
-    <ClInclude Include="Bonuses\FireBallBonus.h" />
-    <ClInclude Include="Bonuses\FragileBlocksBonus.h" />
-    <ClInclude Include="Bonuses\PlatformSizeBonus.h" />
-    <ClInclude Include="Bricks\BrickFactory.h" />
-    <ClInclude Include="Bricks\Brick.h" />
-    <ClInclude Include="Bricks\BrickManager.h" />
-    <ClInclude Include="Bricks\GlassBrick.h" />
-    <ClInclude Include="Bricks\LevelLoader.h" />
-    <ClInclude Include="Bricks\UnbreackableBrick.h" />
-    <ClInclude Include="Bricks\SimpleBrick.h" />
-    <ClInclude Include="Bricks\StrongBrick.h" />
     <ClInclude Include="GameMemento.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="Menu\ConfirmationMenu.h" />
     <ClInclude Include="Menu\GameOverMenu.h" />
     <ClInclude Include="Menu\IMenu.h" />
@@ -222,7 +265,6 @@
     <ClInclude Include="Menu\NameInputMenu.h" />
     <ClInclude Include="Menu\PauseMenu.h" />
     <ClInclude Include="Menu\WinnerMenu.h" />
-    <ClInclude Include="PlatformCommand.h" />
     <ClInclude Include="Scores\IRecordSaveStrategy.h" />
     <ClInclude Include="Scores\IScoreStrategy.h" />
     <ClInclude Include="Scores\RecordManager.h" />
@@ -234,7 +276,6 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="Platform.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -76,8 +76,18 @@ namespace RogaliqueGame
 		}
 		if (state == GameState::Playing)
 		{
-			window.draw(scoreText);
-			window.draw(livesText);
+			// window.draw(scoreText);
+			// window.draw(livesText);
+			
+			sf::Text tmp;
+			tmp.setFont(font);
+			tmp.setCharacterSize(40);
+			tmp.setFillColor(sf::Color::White);
+			tmp.setPosition(SETTINGS.SCREEN_WIDTH / 2.f, SETTINGS.SCREEN_HEIGHT / 2.f);
+			tmp.setString("TO BE DONE... Press Esc to exit to menu");
+			sf::FloatRect bounds = tmp.getLocalBounds();
+			tmp.setOrigin(bounds.left + bounds.width / 2.f, bounds.top + bounds.height / 2.f);
+			window.draw(tmp);
 		}
 	}
 
