@@ -214,7 +214,7 @@
       <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
       <ShowIncludes>false</ShowIncludes>
-      <SourceDependenciesFile>D:\XYZ\Source\Rogalique\RoguelikeGame\\x64\Debug\</SourceDependenciesFile>
+      <SourceDependenciesFile>D:\XYZ\Source\RoguelikeGame\RoguelikeGame\\x64\Debug\</SourceDependenciesFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -227,7 +227,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <UseFullPaths>true</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <XMLDocumentationFileName>D:\XYZ\Source\Rogalique\RoguelikeGame\\x64\Debug\</XMLDocumentationFileName>
+      <XMLDocumentationFileName>D:\XYZ\Source\RoguelikeGame\RoguelikeGame\\x64\Debug\</XMLDocumentationFileName>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <IntelJCCErratum>false</IntelJCCErratum>
       <BuildStlModules>false</BuildStlModules>
