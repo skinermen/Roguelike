@@ -1,4 +1,6 @@
 #include <random>
+#include <string>
+#include <iostream>
 
 #include "Game.h"
 #include "Application.h"
@@ -16,6 +18,18 @@ namespace RoguelikeSpace
 	{
 		ui.Init();
 		ui.SetNextLevelCallback([this]() { StartNextLevel(); });
+
+		const std::string musicPath = SETTINGS.RESOURCES_PATH + "MainTheme.wav";
+		if (!backgroundMusic.openFromFile(musicPath))
+		{
+			std::cerr << "Failed to load background music from " << musicPath << '\n';
+		}
+		else
+		{
+			backgroundMusic.setLoop(true);
+			isMusicLoaded = true;
+		}
+
 		hasGameStarted = false;
 		STATES.SwitchState(GameState::MainMenu);
 	}
@@ -44,13 +58,23 @@ namespace RoguelikeSpace
 			{ Shutdown(window); return; }
 
 		if (currentState == GameState::MainMenu)
-			{ hasGameStarted = false; }
-
+		{
+			if (isMusicLoaded && backgroundMusic.getStatus() == sf::SoundSource::Playing)
+			{
+				backgroundMusic.stop();
+			}
+			hasGameStarted = false;
+		}
+		
 		if (currentState == GameState::Playing && !hasGameStarted)
 		{
 			InitStartNewGame();
 			lastUpdateTime = currentTime;
 			hasGameStarted = true;
+			if (isMusicLoaded && backgroundMusic.getStatus() != sf::SoundSource::Playing)
+			{
+				backgroundMusic.play();
+			}
 		}
 		else if (currentState == GameState::Playing && previousState == GameState::PauseMenu)
 			{ lastUpdateTime = currentTime; }

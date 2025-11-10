@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <set>
 
 #include "UI.h"
@@ -39,5 +40,7 @@ namespace RoguelikeSpace
 		UI ui;
 		GameMemento savedState;
 		int lives = SETTINGS.INITIAL_LIVES;
+		sf::Music backgroundMusic;
+		bool isMusicLoaded = false;
 	};
 }
