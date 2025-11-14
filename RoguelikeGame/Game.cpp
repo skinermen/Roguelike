@@ -94,8 +94,10 @@ namespace RoguelikeSpace
 	void Game::UpdatePlayingState(sf::RenderWindow& window, float deltaTime)
 	{
 		player.Update(window, deltaTime);
+		enemy.UpdatePlayerPosition(player.GetPosition());
+		enemy.Update(window, deltaTime);
 		HandleCollisions();
-		
+
 		ui.UpdateLives(lives);
 	}
 	

@@ -28,6 +28,18 @@ namespace RoguelikeSpace
             clamped.y = std::min(std::max(clamped.y, minY), maxY);
             return clamped;
         }
+
+        sf::Vector2f Normalize(const sf::Vector2f& vector)
+        {
+            const float lengthSquared = vector.x * vector.x + vector.y * vector.y;
+            if (lengthSquared == 0.f)
+            {
+                return {};
+            }
+
+            const float length = std::sqrt(lengthSquared);
+            return { vector.x / length, vector.y / length };
+        }
     }
 
     Enemy::Enemy()
@@ -40,8 +52,31 @@ namespace RoguelikeSpace
         SetPosition({ radius, radius });
     }
 
-    void Enemy::Update(sf::RenderWindow&, float)
+    void Enemy::Update(sf::RenderWindow&, float deltaTime)
     {
+        if (!isChasing)
+        {
+            return;
+        }
+
+        const sf::Vector2f currentPosition = shape.getPosition();
+        const sf::Vector2f toPlayer = targetPosition - currentPosition;
+        const sf::Vector2f direction = Normalize(toPlayer);
+        if (direction.x == 0.f && direction.y == 0.f)
+        {
+            return;
+        }
+
+        const sf::Vector2f movement = direction * movementSpeed * deltaTime;
+        sf::Vector2f newPosition = currentPosition + movement;
+
+        const float distanceToPlayerSquared = DistanceSquared(currentPosition, targetPosition);
+        if (DistanceSquared(currentPosition, newPosition) > distanceToPlayerSquared)
+        {
+            newPosition = targetPosition;
+        }
+
+        SetPosition(newPosition);
     }
 
     void Enemy::Draw(sf::RenderWindow& window) const
@@ -58,6 +93,15 @@ namespace RoguelikeSpace
     sf::Vector2f Enemy::GetPosition() const
     {
         return shape.getPosition();
+    }
+
+    void Enemy::UpdatePlayerPosition(const sf::Vector2f& playerPosition)
+    {
+        targetPosition = playerPosition;
+
+        const float radiusSquared = detectionRadius * detectionRadius;
+        const float distanceSquared = DistanceSquared(shape.getPosition(), playerPosition);
+        isChasing = distanceSquared <= radiusSquared;
     }
 
     void Enemy::SpawnAwayFrom(const sf::Vector2f& positionToAvoid, float minDistance)
