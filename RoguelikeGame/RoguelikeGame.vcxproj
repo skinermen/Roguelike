@@ -43,7 +43,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -249,11 +250,13 @@
     <ClCompile Include="Menu\NameInputMenu.cpp" />
     <ClCompile Include="Menu\PauseMenu.cpp" />
     <ClCompile Include="Menu\WinnerMenu.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scores\RecordManager.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameMemento.h" />
     <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="Menu\ConfirmationMenu.h" />
@@ -265,6 +268,7 @@
     <ClInclude Include="Menu\NameInputMenu.h" />
     <ClInclude Include="Menu\PauseMenu.h" />
     <ClInclude Include="Menu\WinnerMenu.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Scores\IRecordSaveStrategy.h" />
     <ClInclude Include="Scores\IScoreStrategy.h" />
     <ClInclude Include="Scores\RecordManager.h" />

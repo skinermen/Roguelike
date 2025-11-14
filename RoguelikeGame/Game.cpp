@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Application.h"
 #include "GameState.h"
+#include "Settings.h"
 
 namespace RoguelikeSpace
 {
@@ -18,6 +19,8 @@ namespace RoguelikeSpace
 	{
 		ui.Init();
 		ui.SetNextLevelCallback([this]() { StartNextLevel(); });
+
+		ResetPlayerPosition();
 
 		const std::string musicPath = SETTINGS.RESOURCES_PATH + "MainTheme.wav";
 		if (!backgroundMusic.openFromFile(musicPath))
@@ -39,6 +42,7 @@ namespace RoguelikeSpace
 		lives = SETTINGS.INITIAL_LIVES;
 		ui.UpdateLives(lives);
 		SaveState();
+		ResetPlayerPosition();
 	}
 
 	void Game::StartNextLevel()
@@ -47,6 +51,7 @@ namespace RoguelikeSpace
 		lives = SETTINGS.INITIAL_LIVES;
 		ui.UpdateLives(lives);
 		SaveState();
+		ResetPlayerPosition();
 	}
 
 	void Game::Update(float currentTime, sf::RenderWindow& window)
@@ -88,6 +93,7 @@ namespace RoguelikeSpace
 
 	void Game::UpdatePlayingState(sf::RenderWindow& window, float deltaTime)
 	{
+		player.Update(window, deltaTime);
 		HandleCollisions();
 		
 		ui.UpdateLives(lives);
@@ -151,12 +157,31 @@ namespace RoguelikeSpace
 
 	void Game::Draw(sf::RenderWindow& window)
 	{		
+		if (STATES.GetCurrentState() == GameState::Playing)
+		{
+			enemy.Draw(window);
+			player.Draw(window);
+		}
+
 		ui.Draw(window);
 	}
 
 	void Game::Shutdown(sf::RenderWindow& window)
 	{
 		window.close();
+	}
+
+	void Game::ResetPlayerPosition()
+	{
+		const sf::Vector2f startPosition(SETTINGS.SCREEN_WIDTH * 0.5f, SETTINGS.SCREEN_HEIGHT * 0.5f);
+		player.SetPosition(startPosition);
+		SpawnEnemyAwayFromPlayer();
+	}
+
+	void Game::SpawnEnemyAwayFromPlayer()
+	{
+		constexpr float minDistanceFromPlayer = 140.f;
+		enemy.SpawnAwayFrom(player.GetPosition(), minDistanceFromPlayer);
 	}
 }
 

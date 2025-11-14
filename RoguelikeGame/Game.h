@@ -6,6 +6,8 @@
 
 #include "UI.h"
 #include "GameMemento.h"
+#include "Player.h"
+#include "Enemy.h"
 
 namespace RoguelikeSpace
 {
@@ -30,6 +32,8 @@ namespace RoguelikeSpace
 		void HandleCollisions();
 		void SaveState();
 		void RestoreState();
+		void ResetPlayerPosition();
+		void SpawnEnemyAwayFromPlayer();
 
 		int currentLevelIndex = 0;
 		float lastUpdateTime = 0.f;
@@ -38,6 +42,8 @@ namespace RoguelikeSpace
 
 		// Game objects
 		UI ui;
+		Player player;
+		Enemy enemy;
 		GameMemento savedState;
 		int lives = SETTINGS.INITIAL_LIVES;
 		sf::Music backgroundMusic;

@@ -87,7 +87,7 @@ namespace RoguelikeSpace
 			tmp.setString("TO BE DONE... Press Esc to exit to menu");
 			sf::FloatRect bounds = tmp.getLocalBounds();
 			tmp.setOrigin(bounds.left + bounds.width / 2.f, bounds.top + bounds.height / 2.f);
-			window.draw(tmp);
+			//window.draw(tmp);
 		}
 	}
 
