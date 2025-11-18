@@ -163,6 +163,7 @@ namespace RoguelikeSpace
 		{
 			enemy.Draw(window);
 			player.Draw(window);
+			walls.Draw(window);
 		}
 
 		ui.Draw(window);

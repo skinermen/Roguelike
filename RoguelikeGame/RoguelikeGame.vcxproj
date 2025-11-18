@@ -253,6 +253,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scores\RecordManager.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="Walls.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -281,6 +282,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="Walls.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

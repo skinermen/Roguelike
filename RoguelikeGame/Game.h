@@ -8,6 +8,7 @@
 #include "GameMemento.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Walls.h"
 
 namespace RoguelikeSpace
 {
@@ -44,6 +45,7 @@ namespace RoguelikeSpace
 		UI ui;
 		Player player;
 		Enemy enemy;
+		Walls walls;
 		GameMemento savedState;
 		int lives = SETTINGS.INITIAL_LIVES;
 		sf::Music backgroundMusic;

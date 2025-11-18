@@ -57,10 +57,10 @@ namespace RoguelikeSpace
             direction = Normalize(direction);
             const sf::Vector2f newPosition = shape.getPosition() + direction * movementSpeed * deltaTime;
             const float radius = shape.getRadius();
-            const float minX = radius;
-            const float maxX = SETTINGS.SCREEN_WIDTH - radius;
-            const float minY = radius;
-            const float maxY = SETTINGS.SCREEN_HEIGHT - radius;
+            const float minX = SETTINGS.WALL_THICKNESS + radius;
+            const float maxX = SETTINGS.SCREEN_WIDTH - SETTINGS.WALL_THICKNESS - radius;
+            const float minY = SETTINGS.WALL_THICKNESS + radius;
+            const float maxY = SETTINGS.SCREEN_HEIGHT - SETTINGS.WALL_THICKNESS - radius;
 
             sf::Vector2f clampedPosition = newPosition;
             clampedPosition.x = std::min(std::max(clampedPosition.x, minX), maxX);
@@ -77,10 +77,10 @@ namespace RoguelikeSpace
     void Player::SetPosition(const sf::Vector2f& pos)
     {
         const float radius = shape.getRadius();
-        const float minX = radius;
-        const float maxX = SETTINGS.SCREEN_WIDTH - radius;
-        const float minY = radius;
-        const float maxY = SETTINGS.SCREEN_HEIGHT - radius;
+        const float minX = SETTINGS.WALL_THICKNESS + radius;
+        const float maxX = SETTINGS.SCREEN_WIDTH - SETTINGS.WALL_THICKNESS - radius;
+        const float minY = SETTINGS.WALL_THICKNESS + radius;
+        const float maxY = SETTINGS.SCREEN_HEIGHT - SETTINGS.WALL_THICKNESS - radius;
 
         sf::Vector2f clampedPosition = pos;
         clampedPosition.x = std::min(std::max(clampedPosition.x, minX), maxX);

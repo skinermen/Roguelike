@@ -18,10 +18,10 @@ namespace RoguelikeSpace
 
         sf::Vector2f ClampToBounds(const sf::Vector2f& position, float radius)
         {
-            const float minX = radius;
-            const float maxX = SETTINGS.SCREEN_WIDTH - radius;
-            const float minY = radius;
-            const float maxY = SETTINGS.SCREEN_HEIGHT - radius;
+            const float minX = SETTINGS.WALL_THICKNESS + radius;
+            const float maxX = SETTINGS.SCREEN_WIDTH - SETTINGS.WALL_THICKNESS - radius;
+            const float minY = SETTINGS.WALL_THICKNESS + radius;
+            const float maxY = SETTINGS.SCREEN_HEIGHT - SETTINGS.WALL_THICKNESS - radius;
 
             sf::Vector2f clamped = position;
             clamped.x = std::min(std::max(clamped.x, minX), maxX);

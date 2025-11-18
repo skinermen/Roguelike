@@ -29,6 +29,7 @@ namespace RoguelikeSpace
 		const int BORDER_SIZE = 10;
 		const float SCREEN_WIDTH = 800.f;
 		const float SCREEN_HEIGHT = 600.f;
+		const float WALL_THICKNESS = 32.f;
 		
 		// Other
 		const float PAUSE_LENGTH = 1.f;
